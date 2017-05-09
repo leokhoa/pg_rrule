@@ -53,19 +53,40 @@ Example. Expand RRULE without timezone:
   2019-12-28 10:51:02
  (4 rows)
 ```
+ Install Prerequesites:
+ --------
+```
+ sudo apt-get update
+ sudo apt-get install git qmake build-essential postgresql-server-dev-9.5 -y
+ git clone https://github.com/petropavel13/pg_rrule
+``` 
+
  Simple building:
  --------
  ```sh
- cd src/
+ cd pg_rrule/src/
  qmake pg_rrule.pro
+ ln -s /usr/include/postgresql/${PG_MAJOR}/server/ /usr/include/postgresql/server 
  make
  ```
-  Simple install (Linux):
+  Simple install (Ubuntu):
+ --------
  ```sh
- cp libpg_rrule.so /usr/lib/postgresql/pg_rrule.so
- cp pg_rrule.control /usr/share/postgresql/extension/
- cp sql/pg_rrule.sql /usr/share/postgresql/extension/pg_rrule--0.1.0.sql
+ export PG_MAJOR=9.5
+ cp libpg_rrule.so /usr/lib/postgresql/${PG_MAJOR}/lib/pg_rrule.so
+ cp ../pg_rrule.control /usr/share/postgresql/${PG_MAJOR}/extension
+ cp ../sql/pg_rrule.sql.in /usr/share/postgresql/${PG_MAJOR}/extension/pg_rrule--0.2.0.sql
  ```
+
+ Install extension (Postgresql):
+ ```sql
+ CREATE EXTENSION pg_rrule;
+ ```
+
+
+
+
+
  Simple install (OS X):
  ```sh
  #TODO
@@ -151,4 +172,3 @@ Copyright and License
 ---------------------
 
 Copyright (c) 2014 petropavel.
-

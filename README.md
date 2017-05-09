@@ -53,7 +53,7 @@ Example. Expand RRULE without timezone:
   2019-12-28 10:51:02
  (4 rows)
 ```
- Install Prerequesites:
+ Install Prerequisites:
  --------
 ```
  sudo apt-get update

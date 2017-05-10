@@ -57,7 +57,7 @@ Example. Expand RRULE without timezone:
  --------
 ```
  sudo apt-get update
- sudo apt-get install libical-dev git qmake build-essential postgresql-server-dev-9.5 -y
+ sudo apt-get install libical-dev git qt4-qmake build-essential postgresql-server-dev-9.5 -y
  git clone https://github.com/petropavel13/pg_rrule
 ``` 
 

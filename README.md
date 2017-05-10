@@ -64,6 +64,7 @@ Example. Expand RRULE without timezone:
  Simple building:
  --------
  ```sh
+ export PG_MAJOR=9.5
  cd pg_rrule/src/
  qmake pg_rrule.pro
  ln -s /usr/include/postgresql/${PG_MAJOR}/server/ /usr/include/postgresql/server 
@@ -72,7 +73,6 @@ Example. Expand RRULE without timezone:
   Simple install (Ubuntu):
  --------
  ```sh
- export PG_MAJOR=9.5
  cp libpg_rrule.so /usr/lib/postgresql/${PG_MAJOR}/lib/pg_rrule.so
  cp ../pg_rrule.control /usr/share/postgresql/${PG_MAJOR}/extension
  cp ../sql/pg_rrule.sql.in /usr/share/postgresql/${PG_MAJOR}/extension/pg_rrule--0.2.0.sql
